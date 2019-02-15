@@ -3,23 +3,46 @@ const car = {
   make: 'Nissan',   
   model: '370',
   color: 'gray',
-  mileage: 0,
+  mileage: 0,  
   isWorking: true,
 
  driveToWork(){
      alert(`Old Mileage: ${this.mileage}`);
      this.mileage +=10
      alert(`New Mileage: ${this.mileage}`);
-  },
-}
+     },
+
+driveAroundUSA(){
+    alert(`Old Mileage: ${this.mileage}`);
+    this.mileage +=7000
+    alert(`New Mileage: ${this.mileage}`);
+    alert(`Car needs a tuneup!`);
+    this.isWorking = false;
+    },
+
+getTuneUp(){
+    alert(`Car is fixed and ready to go!`);
+    this.isWorking = true;
+    },
+
+    honk(){
+        alert("Honk! Honk!");
+    }
+};
 
 // FUNCTIONS
 // Logs all of our car's current stats to the console
-/*
-function reWriteStats(){
+reWriteStats=()=>{
+console.log(`Make: ${car.make}`);
+console.log(`Model: ${car.model}`);
+console.log(`Color: ${car.color}`);
+console.log(`Mileage: ${car.mileage}`);
+console.log(`isWorking: ${car.isWorking}`);
+console.log(`---------------------------`);
 
 }
-*/
+
+
 
 // MAIN PROCESS
 // Captures keyboard input. Depending on the letter pressed it will "call" (execute) different functions.
@@ -28,6 +51,21 @@ document.onkeyup =(event) => {
     let letter = String.fromCharCode(event.keyCode).toLowerCase();
     if(letter === "d") {
         car.driveToWork();
+        reWriteStats();
+    }
+
+    if(letter === "r") {
+        car.driveAroundUSA();
+        reWriteStats();
+    }
+
+    if(letter === "g") {
+        car.getTuneUp();
+        reWriteStats();
+    }
+
+    if(letter === "h") {
+        car.honk();
         reWriteStats();
     }
 }
