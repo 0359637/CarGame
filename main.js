@@ -59,7 +59,7 @@ document.onkeyup =(event) => {
         reWriteStats();
     }
 
-    if(letter === "g") {
+    if(letter === "t") {
         car.getTuneUp();
         reWriteStats();
     }
